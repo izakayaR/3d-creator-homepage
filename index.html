@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#070f22">
+<link rel="icon" href="assets/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<title>居酒屋R — 3Dクリエイター | VRoid・VRChatアバター制作</title>
+<meta name="description" content="VRChat、VRoidでアバター制作を行う3Dクリエイター「居酒屋R」の公式ホームページ。アバター・衣装制作の依頼受付、作品、自作ツール・ゲームを紹介。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="居酒屋R — 3Dクリエイター">
+<meta property="og:title" content="居酒屋R — 3Dクリエイター | VRoid・VRChatアバター制作">
+<meta property="og:description" content="VRChat、VRoidでアバター制作を行う3Dクリエイター「居酒屋R」の公式ホームページ。アバター・衣装制作の依頼受付、作品、自作ツール・ゲームを紹介。">
+<link rel="canonical" href="https://izakayar.github.io/3d-creator-homepage/">
+<meta property="og:url" content="https://izakayar.github.io/3d-creator-homepage/">
+<meta property="og:image" content="https://izakayar.github.io/3d-creator-homepage/assets/ogp.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="「居酒屋R」「IZAKAYA R — 3D CREATOR」のロゴと、三つ編みのアバター">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="居酒屋R — 3Dクリエイター | VRoid・VRChatアバター制作">
+<meta name="twitter:description" content="VRChat、VRoidでアバター制作を行う3Dクリエイター「居酒屋R」の公式ホームページ。アバター・衣装制作の依頼受付、作品、自作ツール・ゲームを紹介。">
+<meta name="twitter:image" content="https://izakayar.github.io/3d-creator-homepage/assets/ogp.jpg">
+<meta name="twitter:image:alt" content="「居酒屋R」「IZAKAYA R — 3D CREATOR」のロゴと、三つ編みのアバター">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Shippori+Mincho:wght@700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#070f22; --navy-2:#0b1830; --navy-3:#10234a;
+  --pale:#d9e1ea; --pale-2:#c7d2df;
+  --blue:#2c4bff; --blue-deep:#1d35c4;
+  --gold:#c9a35f; --gold-2:#e9ce8c;
+  --ink:#eef2f8; --muted:#9dacc2;
+  --ink-d:#0a1730; --muted-d:#43536c;
+  --line-w:rgba(255,255,255,.14); --line-d:rgba(10,23,48,.18);
+  --en:"Archivo",sans-serif; --min:"Shippori Mincho",serif; --jp:"Zen Kaku Gothic New",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--navy);color:var(--ink);font-family:var(--jp);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+button{min-height:44px}
+.wrap{width:min(1240px,calc(100% - 48px));margin:0 auto;position:relative}
+@media(max-width:560px){.wrap{width:calc(100% - 32px)}}
+::selection{background:var(--blue);color:#fff}
+
+/* vertical guide lines (editorial grid) */
+.guides{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:space-between}
+.guides i{width:1px;background:var(--line-w);opacity:.5}
+.on-pale .guides i{background:var(--line-d)}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(7,15,34,.92);backdrop-filter:blur(12px);border-color:var(--line-w)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:64px}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:12px;line-height:1}
+.brand .b-en{font-family:var(--en);font-weight:900;font-size:19px;letter-spacing:.06em}
+.brand .b-en em{font-style:normal;color:var(--gold-2)}
+.brand .b-jp{font-family:var(--min);font-weight:700;font-size:17px;color:var(--muted);letter-spacing:.08em;line-height:1}
+nav.main{display:flex;align-items:center;gap:2px}
+nav.main a{text-decoration:none;font-family:var(--en);font-weight:700;font-size:12.5px;letter-spacing:.14em;color:var(--muted);padding:10px 13px}
+nav.main a:hover{color:#fff}
+nav.main a.h-cta{background:var(--gold);color:#181003;margin-left:10px;padding:11px 18px;font-family:var(--jp);font-weight:900;font-size:13px;letter-spacing:.06em}
+nav.main a.h-cta:hover{background:var(--gold-2);color:#181003}
+.menu-btn{display:none;background:var(--gold);color:#181003;border:0;font-family:var(--en);font-weight:800;font-size:13px;letter-spacing:.28em;padding:0 20px;height:64px;cursor:pointer}
+@media(max-width:900px){nav.main{display:none}.menu-btn{display:block}header .wrap{width:100%;padding-left:16px}.header-in{height:64px}}
+/* overlay nav */
+.overlay{position:fixed;inset:0;z-index:80;background:var(--navy);display:none;flex-direction:column;padding:0 0 40px}
+.overlay.open{display:flex}
+.overlay .ov-head{display:flex;justify-content:space-between;align-items:center;height:64px;padding-left:16px}
+.overlay .ov-close{background:var(--gold);color:#181003;border:0;font-family:var(--en);font-weight:800;font-size:13px;letter-spacing:.28em;padding:0 20px;height:64px;cursor:pointer}
+.overlay nav{display:flex;flex-direction:column;padding:28px 24px 0;gap:2px}
+.overlay nav a{text-decoration:none;display:flex;align-items:baseline;gap:16px;padding:13px 0;border-bottom:1px solid var(--line-w)}
+.overlay nav a b{font-family:var(--en);font-weight:900;font-size:clamp(30px,8.5vw,44px);line-height:1;letter-spacing:.01em}
+.overlay nav a span{font-size:13px;color:var(--gold-2);font-weight:700;letter-spacing:.2em}
+.overlay .ov-sns{margin-top:auto;padding:24px;display:flex;flex-wrap:wrap;gap:10px}
+.overlay .ov-sns a{text-decoration:none;border:1px solid var(--line-w);padding:9px 16px;font-family:var(--en);font-weight:700;font-size:12.5px;letter-spacing:.12em}
+
+/* ---------- メインビジュアル ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;overflow:hidden;background:
+  radial-gradient(900px 520px at 85% 8%,rgba(44,75,255,.28),transparent 62%),
+  radial-gradient(700px 480px at 8% 90%,rgba(201,163,95,.13),transparent 60%),
+  linear-gradient(168deg,#0c1c3d 0%,var(--navy) 55%,#050a18 100%)}
+.hero-back{position:absolute;top:64px;left:50%;transform:translateX(-50%);width:100%;text-align:center;font-family:var(--en);font-weight:900;font-size:clamp(90px,17.5vw,250px);line-height:.95;letter-spacing:.005em;color:transparent;-webkit-text-stroke:1.5px rgba(157,172,194,.34);white-space:nowrap;z-index:1;user-select:none}
+.hero-back .amp{color:rgba(201,163,95,.16);-webkit-text-stroke:0}
+.hero-chara{position:absolute;z-index:2;right:clamp(96px,10vw,160px);bottom:0;height:min(94svh,64vw,1060px);width:auto;filter:drop-shadow(-28px 30px 44px rgba(2,6,16,.55)) saturate(1.03)}
+.hero-glow{position:absolute;z-index:1;right:clamp(28px,7vw,115px);bottom:-6%;width:min(560px,60vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(44,75,255,.34),rgba(44,75,255,0) 65%)}
+.hero-side-l{position:absolute;z-index:4;left:22px;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;font-family:var(--en);font-weight:700;font-size:11px;letter-spacing:.5em;color:var(--muted)}
+.hero-side-r{position:absolute;z-index:4;right:22px;top:118px;writing-mode:vertical-rl;font-family:var(--min);font-weight:800;font-size:clamp(17px,2.2vw,24px);letter-spacing:.34em;color:var(--gold-2);text-shadow:0 4px 24px rgba(0,0,0,.6)}
+@media(max-width:900px){.hero-side-l{display:none}.hero-side-r{right:12px;top:96px}}
+.hero-in{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:150px 0 56px;pointer-events:none}
+.hero-in>*{pointer-events:auto}
+.hero-status{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.3em;color:var(--gold-2);margin-bottom:20px}
+.hero-status i{width:8px;height:8px;border-radius:50%;background:#7ee2a0;box-shadow:0 0 12px #7ee2a0}
+h1{font-family:var(--min);font-weight:800;font-size:clamp(64px,12.5vw,152px);line-height:1.08;letter-spacing:.02em;margin:0;text-shadow:0 10px 44px rgba(0,0,0,.55),0 2px 0 rgba(201,163,95,.22)}
+h1 .r{font-family:var(--min);font-weight:800;color:var(--gold-2);font-size:.92em;letter-spacing:0;margin-left:.04em;text-shadow:0 10px 44px rgba(0,0,0,.55)}
+.hero-en{font-family:var(--en);font-weight:800;font-size:clamp(13px,1.8vw,18px);letter-spacing:.52em;color:#fff;margin:20px 0 0}
+.hero-en span{color:var(--gold-2)}
+.hero-lead{margin:22px 0 0;font-size:clamp(15px,1.7vw,17.5px);font-weight:500;color:#e7edf6;max-width:31em;line-height:2}
+.hero-lead strong{color:var(--gold-2)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.lang-switch{display:inline-flex;align-items:stretch;margin-top:28px;border:1px solid rgba(255,255,255,.45);background:rgba(7,15,34,.45);width:fit-content}
+.lang-switch button{appearance:none;border:0;background:transparent;color:#dbe3ef;font-family:var(--jp);font-weight:700;font-size:13.5px;letter-spacing:.06em;padding:10px 20px;min-height:44px;cursor:pointer;transition:.16s;line-height:1.2}
+.lang-switch button + button{border-left:1px solid rgba(255,255,255,.3)}
+.lang-switch button:hover{color:#fff}
+.lang-switch button[aria-pressed="true"]{background:var(--gold);color:#181003;font-weight:900}
+.lang-switch button:focus-visible{outline:2px solid var(--gold-2);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:900;font-size:14.5px;letter-spacing:.05em;padding:15px 26px;min-height:52px;transition:.18s;border:1px solid transparent}
+.btn-gold{background:var(--gold);color:#181003}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-line{border-color:rgba(255,255,255,.4);color:#fff;background:rgba(7,15,34,.35)}
+.btn-line:hover{border-color:var(--gold-2);color:var(--gold-2)}
+.btn-navy{background:var(--ink-d);color:#fff}
+.btn-navy:hover{background:var(--blue-deep)}
+.hero-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--en);font-weight:600;font-size:11.5px;letter-spacing:.22em;color:var(--muted)}
+@media(max-width:900px){
+  .hero-chara{height:min(76svh,172vw);right:1vw}
+  .hero-side-r{display:none}
+  .hero-in{padding:120px 0 44px;background:linear-gradient(90deg,rgba(7,15,34,.9) 0%,rgba(7,15,34,.72) 52%,rgba(7,15,34,.12) 88%),linear-gradient(0deg,rgba(7,15,34,.78),rgba(7,15,34,0) 52%)}
+  .hero-back{font-size:24vw;top:84px}
+  .hero-lead{max-width:21em;text-shadow:0 2px 16px rgba(3,7,18,.85)}
+  .hero-meta{text-shadow:0 2px 10px rgba(3,7,18,.85)}
+}
+@media(max-width:480px){.hero-chara{height:min(72svh,170vw);right:0}.hero-lead{font-size:14.5px;max-width:19em}}
+
+/* marquee */
+.marquee{background:var(--blue);color:#fff;overflow:hidden;white-space:nowrap;position:relative;z-index:5;border-top:1px solid rgba(255,255,255,.25)}
+.marquee .mq-track{display:inline-flex;animation:mq 26s linear infinite;padding:11px 0}
+.marquee span{font-family:var(--en);font-weight:800;font-size:13.5px;letter-spacing:.3em;padding-right:.4em}
+.marquee b{color:var(--gold-2);font-weight:800;padding:0 .9em}
+@keyframes mq{to{transform:translateX(-50%)}}
+.marquee.gold{background:var(--gold);color:#181003}
+.marquee.gold b{color:var(--blue-deep)}
+
+/* ---------- section scaffold ---------- */
+section{position:relative;padding:110px 0 120px;overflow:hidden}
+.sec-dark{background:linear-gradient(180deg,var(--navy) ,var(--navy-2))}
+.sec-pale{background:linear-gradient(180deg,var(--pale),var(--pale-2));color:var(--ink-d)}
+.sec-head{position:relative;z-index:3;margin-bottom:54px}
+.sec-title{font-family:var(--en);font-weight:900;font-size:clamp(56px,10.2vw,142px);line-height:.92;letter-spacing:-.005em;margin:0;text-transform:uppercase}
+.sec-pale .sec-title{color:var(--blue)}
+.sec-dark .sec-title{color:var(--pale)}
+.sec-title .ol{color:transparent;-webkit-text-stroke:1.5px var(--gold)}
+.sec-pale .sec-title .ol{-webkit-text-stroke:1.5px var(--ink-d)}
+.sec-sub{display:flex;align-items:center;gap:16px;margin-top:20px;flex-wrap:wrap}
+.sec-sub .no{font-family:var(--en);font-weight:800;font-size:12.5px;letter-spacing:.3em;color:var(--gold)}
+.sec-pale .sec-sub .no{color:var(--blue-deep)}
+.sec-sub .jp{font-family:var(--min);font-weight:800;font-size:clamp(19px,2.6vw,25px);letter-spacing:.1em}
+.sec-sub .rule{flex:1;height:1px;background:var(--line-w);min-width:40px}
+.sec-pale .sec-sub .rule{background:var(--line-d)}
+.sec-sub .note{font-size:13.5px;color:var(--muted);max-width:34em}
+.sec-pale .sec-sub .note{color:var(--muted-d)}
+/* commission: bring "XのDMにて受付中" closer to the heading and make it larger */
+#commission .sec-sub{gap:12px}
+#commission .sec-sub .rule{flex:0 1 56px;min-width:28px}
+#commission .sec-sub .note{font-size:clamp(17px,2.4vw,21px);font-weight:700;color:var(--gold-2);letter-spacing:.06em;line-height:1.4;max-width:none;white-space:nowrap}
+@media(max-width:560px){#commission .sec-sub .note{white-space:normal}}
+
+/* ---------- profile ---------- */
+.profile-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:0;position:relative;z-index:2}
+.profile-block{background:var(--navy);color:var(--ink);padding:clamp(28px,4vw,52px);margin-top:-38px}
+.profile-block h3{font-family:var(--min);font-size:clamp(21px,2.6vw,27px);letter-spacing:.06em;margin:0 0 18px;line-height:1.5}
+.profile-block h3 em{font-style:normal;color:var(--gold-2)}
+.profile-block p{color:#c3cede;font-size:15px;margin:0 0 14px}
+.profile-block p strong{color:#fff}
+.spec-rows{margin-top:24px;border-top:1px solid var(--line-w)}
+.spec-rows div{display:flex;gap:14px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--line-w);font-size:14.5px}
+.spec-rows div::before{content:"◆";color:var(--gold);font-size:9px}
+.profile-visual{position:relative;min-height:420px}
+.profile-visual .pv-glow{position:absolute;inset:auto -6% -4% -14%;height:70%;background:radial-gradient(closest-side,rgba(44,75,255,.4),transparent);filter:blur(6px)}
+.profile-visual img{position:absolute;right:0;bottom:-24px;width:min(106%,540px);height:auto;max-width:none;filter:drop-shadow(-16px 22px 30px rgba(7,17,40,.4)) saturate(1.03);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.profile-visual:hover img{transform:translateY(-8px)}
+.profile-visual .pv-label{position:absolute;left:0;bottom:26px;z-index:3;background:var(--blue);color:#fff;font-family:var(--en);font-weight:800;font-size:11.5px;letter-spacing:.24em;padding:9px 14px}
+@media(max-width:900px){
+  .profile-grid{grid-template-columns:1fr}
+  .profile-block{margin-top:0}
+  .profile-visual{min-height:480px;order:-1}
+  .profile-visual img{width:min(94vw,380px);height:auto;right:50%;transform:translateX(50%)}
+  .profile-visual:hover img{transform:translateX(50%) translateY(-8px)}
+}
+.audience-line{margin-top:52px;padding-top:30px;border-top:2px solid var(--ink-d);display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13.5px;color:var(--muted-d)}
+.audience-line b{font-family:var(--en);letter-spacing:.24em;font-size:11.5px;color:var(--blue-deep)}
+.audience-line span{border:1px solid var(--line-d);padding:6px 14px;font-weight:700;color:var(--ink-d)}
+
+/* ---------- commission ---------- */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;position:relative;z-index:2}
+.price{background:var(--pale);color:var(--ink-d);padding:34px 30px 30px;display:flex;flex-direction:column;position:relative}
+.price .p-tag{font-family:var(--en);font-weight:800;font-size:11px;letter-spacing:.3em;color:var(--blue-deep);margin-bottom:14px}
+.price .p-name{font-family:var(--min);font-weight:800;font-size:21px;line-height:1.5;min-height:63px}
+.price .p-price{font-family:var(--en);font-weight:900;font-size:clamp(36px,3.6vw,46px);line-height:1;margin:16px 0 6px;color:var(--ink-d)}
+.price .p-price small{font-family:var(--jp);font-size:14px;font-weight:700;color:var(--muted-d)}
+.price .p-desc{font-size:14px;color:var(--muted-d);margin:0 0 20px;flex:1}
+.price ul{list-style:none;margin:0 0 24px;padding:16px 0 0;border-top:1px solid var(--line-d);display:grid;gap:8px;font-size:13.5px}
+.price ul li::before{content:"— ";color:var(--blue);font-weight:900}
+.price.featured{background:var(--blue);color:#fff}
+.price.featured .p-tag{color:var(--gold-2)}
+.price.featured .p-price{color:#fff}
+.price.featured .p-price small,.price.featured .p-desc{color:#ccd6ff}
+.price.featured ul{border-color:rgba(255,255,255,.3)}
+.price.featured ul li::before{color:var(--gold-2)}
+.price .badge{position:absolute;top:-14px;right:22px;background:var(--gold);color:#181003;font-size:12px;font-weight:900;letter-spacing:.1em;padding:6px 13px}
+.btn-card{display:inline-flex;justify-content:center;align-items:center;min-height:48px;text-decoration:none;font-weight:900;font-size:14px;letter-spacing:.05em;border:1px solid var(--ink-d);color:var(--ink-d);transition:.16s}
+.btn-card:hover{background:var(--ink-d);color:#fff}
+.price.featured .btn-card{border-color:#fff;color:#fff}
+.price.featured .btn-card:hover{background:#fff;color:var(--blue-deep)}
+/* detail dropdown (Coconala quote) */
+.p-detail{margin:0 0 12px}
+.p-detail summary.btn-card{width:100%;cursor:pointer;list-style:none;user-select:none}
+.p-detail summary::-webkit-details-marker{display:none}
+.p-detail summary .chev{font-size:11px;margin-left:9px;transition:transform .22s}
+.p-detail[open ] summary .chev{transform:rotate(180deg)}
+.p-detail-body{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line-d);font-size:13.5px;line-height:1.85;color:var(--muted-d)}
+.price.featured .p-detail-body{border-top-color:rgba(255,255,255,.4);color:#d7dfff}
+.p-detail-body h4{font-size:13.5px;font-weight:900;margin:18px 0 6px;color:var(--ink-d);letter-spacing:.03em}
+.p-detail-body h4:first-child{margin-top:0}
+.price.featured .p-detail-body h4{color:#fff}
+.p-detail-body p{margin:0 0 10px}
+.price .p-detail-body ul,.price .p-detail-body ol{border-top:0;padding:0;margin:0 0 12px;display:block}
+.p-detail-body ul{list-style:none}
+.p-detail-body ul li{margin:0 0 2px}
+.price .p-detail-body ul li::before{content:"・";color:inherit;font-weight:400}
+.p-detail-body ol{padding-left:1.4em}
+.p-detail-body ol li{margin:0 0 2px}
+.p-detail-body a{color:var(--blue-deep);font-weight:700;word-break:break-all}
+.price.featured .p-detail-body a{color:var(--gold-2)}
+.p-detail-body .p-src{font-size:12px;margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line-d)}
+.price.featured .p-detail-body .p-src{border-top-color:rgba(255,255,255,.3)}
+.btn-x{background:#000;border-color:#000;color:#fff}
+.btn-x:hover{background:#2b2b2b;border-color:#2b2b2b;color:#fff}
+.price.featured .btn-x{border-color:#000}
+.price.featured .btn-x:hover{background:#2b2b2b;color:#fff}
+@media(max-width:920px){.price-grid{grid-template-columns:1fr}.price .p-name{min-height:0}}
+.free-note{margin-top:22px;border:1px solid rgba(201,163,95,.55);padding:20px 24px;display:flex;gap:18px;align-items:baseline;flex-wrap:wrap;position:relative;z-index:2}
+.free-note b{font-family:var(--min);font-size:17px;color:var(--gold-2);letter-spacing:.08em;white-space:nowrap}
+.free-note span{font-size:14px;color:#c3cede}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:8px;position:relative;z-index:2}
+.step{border-top:2px solid var(--gold);padding-top:18px}
+.step .num{font-family:var(--en);font-weight:900;font-size:34px;color:transparent;-webkit-text-stroke:1.2px var(--gold-2);line-height:1}
+.step h3{font-size:16.5px;margin:12px 0 8px;letter-spacing:.04em}
+.step p{margin:0;font-size:13.5px;color:var(--muted)}
+@media(max-width:920px){.flow{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.flow{grid-template-columns:1fr}}
+.flow-head{display:flex;align-items:baseline;gap:18px;margin:76px 0 30px;position:relative;z-index:2}
+.flow-head .en{font-family:var(--en);font-weight:900;font-size:clamp(30px,4.4vw,44px);letter-spacing:.02em;color:var(--pale)}
+.flow-head .jp{font-family:var(--min);font-weight:800;color:var(--gold-2);letter-spacing:.16em}
+
+/* ---------- works gallery ---------- */
+.gallery{position:relative;z-index:2;margin-bottom:64px;max-width:920px}
+.g-item{position:relative;margin:0}
+.g-item .stage{position:relative;overflow:visible}
+.g-item img{position:relative;z-index:2;width:100%;height:auto;margin-top:clamp(38px,6vw,84px);transition:transform .55s cubic-bezier(.2,.7,.2,1);filter:drop-shadow(-12px 20px 26px rgba(7,17,40,.35)) saturate(1.03)}
+.g-item:hover img{transform:translateY(-10px) scale(1.012)}
+.g-item .g-bg{position:absolute;z-index:1;font-family:var(--en);font-weight:900;line-height:.9;color:transparent;-webkit-text-stroke:1.3px rgba(10,23,48,.4);white-space:nowrap;user-select:none;font-size:clamp(52px,8.6vw,124px);top:2%;left:-6px}
+.g-item .g-label{position:relative;z-index:3;display:flex;align-items:baseline;gap:14px;margin-top:16px;flex-wrap:wrap}
+.g-item .g-no{font-family:var(--en);font-weight:900;font-size:13px;letter-spacing:.2em;color:#fff;background:var(--blue);padding:5px 10px}
+.g-item .g-label b{font-family:var(--min);font-size:16.5px;letter-spacing:.05em}
+.g-item .g-label span{font-size:12.5px;color:var(--muted-d);width:100%;line-height:1.65}
+.g-item .floor{position:absolute;z-index:1;left:6%;right:6%;bottom:-8px;height:26px;border-radius:50%;background:radial-gradient(closest-side,rgba(7,17,40,.4),transparent)}
+/* BOOTH products */
+.booth-head{display:flex;align-items:baseline;gap:18px;margin:0 0 28px;position:relative;z-index:2}
+.booth-head .en{font-family:var(--en);font-weight:900;font-size:clamp(30px,4.4vw,44px);letter-spacing:.02em;color:var(--ink-d)}
+.booth-head .jp{font-family:var(--min);font-weight:800;color:var(--blue-deep);letter-spacing:.16em}
+.booth-list{position:relative;z-index:2;border-top:2px solid var(--ink-d)}
+.booth-item{display:grid;grid-template-columns:300px 1fr;gap:30px;padding:30px 4px;border-bottom:1px solid var(--line-d);align-items:start}
+.booth-item .b-img{display:block;line-height:0}
+.booth-item .b-img img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.booth-item .b-img:hover img{transform:scale(1.02)}
+.booth-item .b-cat{font-family:var(--en);font-weight:800;font-size:11px;letter-spacing:.2em;color:var(--blue-deep)}
+.booth-item h3{margin:8px 0 0;font-family:var(--min);font-size:clamp(18px,2.2vw,21px);letter-spacing:.03em;line-height:1.55}
+.booth-item .b-price{font-family:var(--en);font-weight:900;font-size:22px;color:var(--blue-deep);margin-top:8px}
+.booth-item .b-price small{font-family:var(--jp);font-size:12.5px;font-weight:700;color:var(--muted-d)}
+.booth-item p{margin:10px 0 0;font-size:14px;color:var(--muted-d);line-height:1.85;max-width:46em}
+.booth-item .b-link{display:inline-flex;align-items:center;gap:10px;margin-top:18px;text-decoration:none;font-weight:900;font-size:14px;letter-spacing:.05em;border:1px solid var(--ink-d);color:var(--ink-d);padding:12px 22px;min-height:48px;transition:.16s}
+.booth-item .b-link:hover{background:var(--ink-d);color:#fff}
+@media(max-width:700px){.booth-item{grid-template-columns:1fr;gap:18px}.booth-item .b-img{max-width:420px}}
+.works-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px;position:relative;z-index:2}
+.btn-line-d{border:1px solid var(--ink-d);color:var(--ink-d);background:transparent}
+.btn-line-d:hover{border-color:var(--blue-deep);color:var(--blue-deep)}
+
+/* ---------- tools ---------- */
+.tool-grid{display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:2;border-top:1px solid var(--line-w);border-bottom:1px solid var(--line-w)}
+.tool{padding:36px 30px 34px;border-right:1px solid var(--line-w);display:flex;flex-direction:column}
+.tool:last-child{border-right:0}
+.tool .t-thumb{display:block;line-height:0;margin-bottom:22px;border:1px solid var(--line-w);overflow:hidden}
+.tool .t-thumb img{width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.tool .t-thumb:hover img{transform:scale(1.03)}
+.tool .t-no{font-family:var(--en);font-weight:900;font-size:15px;letter-spacing:.24em;color:var(--gold-2)}
+.tool h3{font-family:var(--min);font-size:22px;letter-spacing:.05em;margin:16px 0 2px}
+.tool .t-en{font-family:var(--en);font-weight:700;font-size:11px;letter-spacing:.3em;color:var(--gold);margin:0 0 16px}
+.tool>p{font-size:14px;color:#c3cede;margin:0 0 16px}
+.tool ul{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:7px;font-size:13.5px;color:#dbe3ef}
+.tool ul li::before{content:"— ";color:var(--gold)}
+.tool .spacer{flex:1}
+.privacy{border:1px solid rgba(126,226,160,.35);color:#bfe9cd;font-size:12.5px;padding:10px 13px;margin-bottom:18px;line-height:1.65}
+.tool-link{font-family:var(--en);font-weight:800;font-size:13.5px;letter-spacing:.14em;color:var(--gold-2);text-decoration:none;display:inline-flex;gap:10px;align-items:center;min-height:44px}
+.tool-link:hover{color:#fff}
+@media(max-width:920px){.tool-grid{grid-template-columns:1fr}.tool{border-right:0;border-bottom:1px solid var(--line-w)}.tool:last-child{border-bottom:0}}
+
+/* ---------- links / cta / footer ---------- */
+.link-list{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;position:relative;z-index:2}
+.link-row{display:flex;align-items:center;gap:16px;text-decoration:none;padding:19px 6px;border-bottom:1px solid var(--line-d);transition:.16s}
+.link-row:first-child,.link-row:nth-child(2){border-top:2px solid var(--ink-d)}
+.link-row .l-icon{flex:0 0 46px;width:46px;height:46px;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden}
+.link-row .l-icon svg{width:23px;height:23px;fill:currentColor;display:block;flex-shrink:0}
+.link-row .l-icon .l-letter{font-family:var(--en);font-weight:900;line-height:1;letter-spacing:-.02em}
+.link-row .l-icon--x{background:#000}
+.link-row .l-icon--x svg{width:20px;height:20px}
+.link-row .l-icon--coconala{background:#ff6b35}
+.link-row .l-icon--coconala .l-letter{font-size:22px}
+.link-row .l-icon--booth{background:#fc4d50}
+.link-row .l-icon--booth .l-letter{font-size:23px}
+.link-row .l-icon--vroid{background:#1a1a2e}
+.link-row .l-icon--vroid .l-letter{font-size:23px;color:#7ee2ff}
+.link-row .l-icon--cluster{background:#000}
+.link-row .l-icon--pixiv{background:#0096fa}
+.link-row .l-icon--pixiv .l-letter{font-size:24px;font-style:italic}
+.link-row .l-icon--youtube{background:#ff0000}
+.link-row .l-icon--youtube svg{width:26px;height:26px}
+.link-row .l-icon--twitch{background:#9146ff}
+.link-row .l-icon--twitch svg{width:22px;height:22px}
+.link-row .l-icon--litlink{background:#06c755}
+.link-row .l-icon--litlink svg{width:22px;height:22px}
+.link-row .l-en{font-family:var(--en);font-weight:900;font-size:clamp(19px,2.3vw,25px);letter-spacing:.03em;line-height:1.15;white-space:nowrap}
+.link-row .l-desc{font-size:12.5px;color:var(--muted-d);flex:1;line-height:1.6}
+.link-row .l-arrow{font-family:var(--en);font-weight:900;color:var(--blue);font-size:19px;transition:.16s;flex-shrink:0}
+.link-row:hover{background:rgba(255,255,255,.35)}
+.link-row:hover .l-arrow{transform:translate(3px,-3px);color:var(--blue-deep)}
+@media(max-width:860px){.link-list{grid-template-columns:1fr}.link-row:nth-child(2){border-top:0}.link-row .l-desc{display:none}}
+.cta{margin-top:84px;background:linear-gradient(150deg,var(--navy-3),var(--navy));color:var(--ink);padding:clamp(40px,6vw,72px) clamp(24px,5vw,64px);position:relative;overflow:hidden;z-index:2}
+.cta .cta-bg{position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:var(--en);font-weight:900;font-size:clamp(120px,20vw,300px);line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(157,172,194,.25);user-select:none}
+.cta h2{font-family:var(--min);font-weight:800;font-size:clamp(27px,4.4vw,42px);line-height:1.45;letter-spacing:.05em;margin:0 0 14px;position:relative}
+.cta p{color:#c3cede;max-width:36em;margin:0 0 28px;position:relative;font-size:15px}
+.cta .btns{display:flex;flex-wrap:wrap;gap:12px;position:relative}
+footer{background:#04081a;padding:70px 0 38px;position:relative;overflow:hidden}
+.foot-big{font-family:var(--en);font-weight:900;font-size:clamp(52px,11.6vw,168px);line-height:.95;letter-spacing:.01em;color:var(--pale);white-space:nowrap}
+.foot-big em{font-style:normal;color:var(--gold-2)}
+.foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:44px;padding-top:28px;border-top:1px solid var(--line-w)}
+.foot-grid nav{display:flex;gap:4px 22px;flex-wrap:wrap}
+.foot-grid nav a{text-decoration:none;font-family:var(--en);font-weight:700;font-size:12px;letter-spacing:.18em;color:var(--muted);padding:8px 0}
+.foot-grid nav a:hover{color:#fff}
+.foot-note{color:#5f7089;font-size:12px;margin-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+<div class="wrap header-in">
+<a class="brand" href="#top" aria-label="居酒屋R トップへ"><span class="b-en">IZAKAYA <em>R</em></span><span class="b-jp">居酒屋R</span></a>
+<nav class="main" aria-label="メインナビゲーション">
+<a href="#profile">PROFILE</a>
+<a href="#works">WORKS</a>
+<a href="#commission">COMMISSION</a>
+<a href="#tools">TOOLS</a>
+<a href="#links">LINKS</a>
+<a class="h-cta" href="https://x.com/R_popopo01" target="_blank" rel="noopener">Xで依頼する</a>
+</nav>
+<button class="menu-btn" id="menuOpen" aria-haspopup="dialog" aria-controls="overlayNav">MENU</button>
+</div>
+</header>
+
+<div class="overlay" id="overlayNav" role="dialog" aria-modal="true" aria-label="サイトメニュー">
+<div class="ov-head">
+<span class="brand"><span class="b-en" style="font-family:var(--en);font-weight:900;font-size:19px">IZAKAYA <em style="font-style:normal;color:var(--gold-2)">R</em></span></span>
+<button class="ov-close" id="menuClose">CLOSE</button>
+</div>
+<nav>
+<a href="#profile"><b>PROFILE</b><span>プロフィール</span></a>
+<a href="#works"><b>WORKS</b><span>作品</span></a>
+<a href="#commission"><b>COMMISSION</b><span>依頼メニュー</span></a>
+<a href="#tools"><b>TOOLS</b><span>ツール＆ゲーム</span></a>
+<a href="#links"><b>LINKS</b><span>リンク</span></a>
+</nav>
+<div class="ov-sns">
+<a href="https://x.com/R_popopo01" target="_blank" rel="noopener">X</a>
+<a href="https://coconala.com/users/6417532" target="_blank" rel="noopener">COCONALA</a>
+<a href="https://hub.vroid.com/users/127803731" target="_blank" rel="noopener">VROID HUB</a>
+<a href="https://cluster.mu/u/kqhBrhJDwNR6dM3z" target="_blank" rel="noopener">CLUSTER</a>
+<a href="https://www.youtube.com/@居酒屋R" target="_blank" rel="noopener">YOUTUBE</a>
+</div>
+</div>
+
+<main id="top">
+<!-- ============ メインビジュアル ============ -->
+<div class="hero">
+<div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="hero-back" aria-hidden="true">IZAKAYA<span class="amp"> R</span></div>
+<div class="hero-glow" aria-hidden="true"></div>
+<img class="hero-chara" src="assets/hero-braid.webp" alt="青い三つ編みと「居酒屋R」の札が付いた帽子、黒の中華風トップスとプリーツスカートのアバター全身" width="943" height="1800">
+<p class="hero-side-r" aria-hidden="true">あなただけの姿を、仕立てる。</p>
+<div class="wrap hero-in">
+<span class="hero-status"><i></i>COMMISSION OPEN — 依頼受付中</span>
+<h1>居酒屋<span class="r">R</span></h1>
+<p class="hero-en">IZAKAYA R <span>— 3D CREATOR</span></p>
+<div class="lang-switch" role="group" aria-label="言語切り替え / Language">
+<button type="button" id="langJa" aria-pressed="true">日本語</button>
+<button type="button" id="langEn" aria-pressed="false">English</button>
+</div>
+<div class="hero-btns">
+<a class="btn btn-line" href="#works">作品を見る</a>
+</div>
+<div class="hero-meta"><span>VROID STUDIO</span><span>VRM AVATAR</span><span>COSTUME / TEXTURE</span><span>VTUBER</span></div>
+</div>
+<div class="marquee" aria-hidden="true"><div class="mq-track" id="mq1"></div></div>
+</div>
+
+<!-- ============ PROFILE ============ -->
+<section id="profile" class="sec-pale">
+<div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+<div class="sec-head">
+<h2 class="sec-title">Pro<span class="ol">file</span></h2>
+<div class="sec-sub"><span class="no">01</span><span class="jp">いらっしゃいませ。居酒屋Rです</span><span class="rule"></span></div>
+</div>
+<div class="profile-grid">
+<div class="profile-block">
+<h3>青いお団子髪とチャイナドレスが目印の<br><em>3Dクリエイター</em>です。</h3>
+<p>VRoid Studioを使って、VRMアバター・衣装・テクスチャを制作しています。clusterなどで使えるアバターはもちろん、ワールド、クラフトアイテム、アクセサリーまで幅広く手がけています。</p>
+<p>得意な衣装はファンタジー系・SF衣装。チャイナドレスをはじめ、衣装単体のオーダーや、既存アバターへの衣装調整・改変、テクスチャの制作・差し替えにも対応します。</p>
+<p>制作だけでなく、ブラウザで動くVRM編集ツールやゲームも自作・公開しています。配信はTwitchでたまにゲーム配信してます。</p>
+<div class="spec-rows">
+<div>VRoid StudioでのVRMアバター制作</div>
+<div>衣装・テクスチャ制作（和装／制服／ファンタジー／SF）</div>
+<div>VRoidアバターの衣装調整・改変</div>
+<div>cluster向けワールド・クラフトアイテム・アクセサリー制作</div>
+</div>
+</div>
+<div class="profile-visual">
+<div class="pv-glow" aria-hidden="true"></div>
+<img src="assets/profile-kneel.webp" alt="濃紺のチャイナドレスを着て膝立ちし、顔の横に手を添えたポーズ" width="1240" height="1673" loading="lazy">
+<span class="pv-label">R CHINA DRESS — NAVY</span>
+</div>
+</div>
+<div class="audience-line"><b>FOR</b><span>VTuberとして活動したい方</span><span>VRChat・clusterで自分らしい姿がほしい方</span><span>既存アバターに新しい衣装を着せたい方</span></div>
+</div>
+</section>
+
+<!-- ============ WORKS ============ -->
+<section id="works" class="sec-pale">
+<div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+<div class="sec-head">
+<h2 class="sec-title">Wo<span class="ol">rks</span></h2>
+<div class="sec-sub"><span class="no">02</span><span class="jp">作品</span><span class="rule"></span></div>
+</div>
+
+<div class="gallery">
+<figure class="g-item" id="photo-china-trio">
+<div class="stage">
+<span class="g-bg" aria-hidden="true">CHINA DRESS</span>
+<img src="assets/china-trio-cut.webp" alt="チャイナドレス衣装の3色バリエーション（白・濃紺・水色）を着た3体のアバター" width="1500" height="1578" loading="lazy">
+<span class="floor" aria-hidden="true"></span>
+</div>
+<figcaption class="g-label"><b>チャイナドレス</b><span>白／濃紺／水色。代表作 チャイナドレスシリーズのカラー展開です。</span></figcaption>
+</figure>
+</div>
+
+<div class="booth-head"><span class="en">BOOTH</span><span class="jp">販売中の商品</span></div>
+<div class="booth-list">
+<article class="booth-item">
+<a class="b-img" href="https://izakaya-r.booth.pm/items/9058993" target="_blank" rel="noopener"><img src="assets/booth-china.jpg" alt="チャイナドレスセット01を着た3体のアバター（白・濃紺・水色）" width="1024" height="1024" loading="lazy"></a>
+<div>
+<span class="b-cat">BOOTH ・ VRoid衣装</span>
+<h3>【VRoid衣装】チャイナドレスセット01【全10色+タイツ2種+ブーツ2種】</h3>
+<p>VRoid Studioに読み込んで対応アバターに着せるチャイナドレス（チャイパオ）のセットです。ドレスは全10色（ネイビー、ブルー、オレンジ、ピンク、レッド、グリーン、グレー、ライトブルー、パープル、ブラック）。ガーターベルト付きタイツ、下半身インナー、ピンヒール、厚底ブーツを自由に組み合わせてカスタマイズできます。テクスチャはレイヤーの表示／非表示でも組み合わせ可能です。改変・加工や商用利用、cluster・VRChatなどでの使用もOKです。</p>
+<a class="b-link" href="https://izakaya-r.booth.pm/items/9058993" target="_blank" rel="noopener">BOOTHで商品を見る ↗</a>
+</div>
+</article>
+<article class="booth-item">
+<a class="b-img" href="https://izakaya-r.booth.pm/items/8944289" target="_blank" rel="noopener"><img src="assets/booth-halloween.jpg" alt="ハロウィンワンピース セット01を着た3体のアバター（オレンジ・パープル・グリーン）" width="1024" height="1024" loading="lazy"></a>
+<div>
+<span class="b-cat">BOOTH ・ VRoid衣装</span>
+<h3>ハロウィンワンピース セット01</h3>
+<p>VRoid Studioに読み込んで対応アバターに着せる、3色のハロウィン衣装セットです。ハロウィンワンピース3色（オレンジ、パープル、グリーン）に、魔女帽子2色（オレンジ、パープル）、レッグウェア、ハロウィンブーツ2色（シルバー、ゴールド）が入っています。テクスチャはレイヤーの表示／非表示で組み合わせ可能です。改変・加工や商用利用、cluster・VRChatなどでの使用もOKです。</p>
+<a class="b-link" href="https://izakaya-r.booth.pm/items/8944289" target="_blank" rel="noopener">BOOTHで商品を見る ↗</a>
+</div>
+</article>
+<article class="booth-item">
+<a class="b-img" href="https://izakaya-r.booth.pm/items/9076482" target="_blank" rel="noopener"><img src="assets/booth-magic.jpg" alt="金の時計魔法陣を背に立つアバター（魔法陣＆時間魔法エフェクトの使用イメージ）" width="1024" height="1024" loading="lazy"></a>
+<div>
+<span class="b-cat">BOOTH ・ プラグイン（無料）</span>
+<h3>【VRM Easy Customizer用プラグイン】魔法陣＆時間魔法エフェクト（無料）</h3>
+<div class="b-price">¥0 <small>無料ダウンロード</small></div>
+<p>自作ツール「VRM Easy Customizer」で使えるプラグインです。アバターの足元や背後に発光する魔法陣を表示して撮影できます。星・月・太陽・ルーン文字の「魔法陣エフェクト」と、時計・文字盤モチーフの「時間魔法エフェクト」の2つがセットになっています。魔法陣は最大10個まで同時表示でき、色・大きさ・発光の強さ・回転速度などを調整可能です。撮影（画像・動画）時のみ使えるエフェクトで、アバターデータは含まれません。作った画像・動画のSNS投稿や配信への使用は、個人・商用を問わずOKです。</p>
+<a class="b-link" href="https://izakaya-r.booth.pm/items/9076482" target="_blank" rel="noopener">BOOTHで商品を見る ↗</a>
+</div>
+</article>
+</div>
+<div class="works-cta">
+<a class="btn btn-navy" href="https://izakaya-r.booth.pm/" target="_blank" rel="noopener">BOOTHで商品を見る</a>
+</div>
+</div>
+</section>
+
+<div class="marquee gold" aria-hidden="true"><div class="mq-track" id="mq2"></div></div>
+
+<!-- ============ COMMISSION ============ -->
+<section id="commission" class="sec-dark">
+<div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+<div class="sec-head">
+<h2 class="sec-title">Commis<span class="ol">sion</span></h2>
+<div class="sec-sub"><span class="no">03</span><span class="jp">依頼メニュー</span><span class="rule"></span><span class="note">XのDMにて受付中</span></div>
+</div>
+<div class="price-grid">
+<article class="price">
+<div class="p-tag">AVATAR ONLY</div>
+<div class="p-name">VRoidアバター<br>（素体のみ）制作</div>
+<div class="p-price">¥30,000</div>
+<p class="p-desc">VRoid Studioで、あなたのためのVRMアバター素体のみを制作。VTuber・VRChat・clusterでの活動の第一歩に。</p>
+<ul><li>VRMアバター制作</li><li>途中経過の確認あり</li></ul>
+<details class="p-detail">
+<summary class="btn-card">詳細を表示<span class="chev" aria-hidden="true">▼</span></summary>
+<div class="p-detail-body">
+<h4>■ 内容(VRM形式、.vroid形式で納品)</h4>
+<p>アバター(素体)のみの制作<br>依頼料:30,000円<br>納期:5日程度<br>修正:2〜3回まで(※)</p>
+<p>※ 納品完了後の大幅な修正は、追加料金をいただきます。</p>
+<h4>■ こんな方におすすめ</h4>
+<ul>
+<li>VTuber・配信用のオリジナルアバターがほしい</li>
+<li>設定画やイメージ画像を、VRMとして形にしたい</li>
+<li>衣装は自分で用意するので、素体だけ作ってほしい</li>
+</ul>
+<h4>■ ご依頼の流れ</h4>
+<ol>
+<li>ご相談(ご希望のイメージ、ご予算、納期をお知らせください)</li>
+<li>お見積り・仕様の確認</li>
+<li>ご購入(正式なご依頼)</li>
+<li>制作(途中経過をご確認いただきます)</li>
+<li>納品・修正対応</li>
+</ol>
+<h4>■ こだわり</h4>
+<ul><li>ご依頼のイメージを一緒に整理するところから、お手伝いします。</li></ul>
+<h4>■ 参考制作物(VRoid Hub)</h4>
+<p><a href="https://hub.vroid.com/users/127803731" target="_blank" rel="noopener">https://hub.vroid.com/users/127803731</a></p>
+<p>衣装の制作、衣装と素体のセットのご依頼も、別メニューで承っています。<br>お気軽にご相談ください。</p>
+<h4>■ ご購入前にお知らせください</h4>
+<ul>
+<li>イメージがわかる資料(設定画、参考画像、色味・髪型・体型の指定など)</li>
+<li>参考にしたい作品がある場合は、そのURLや画像</li>
+</ul>
+<h4>■ 納品・修正について</h4>
+<ul>
+<li>納品形式はVRM形式、.vroid形式の両方です</li>
+<li>修正は2〜3回まで対応します</li>
+<li>納品完了後の大幅な修正は、追加料金をいただきます</li>
+<li>制作の途中で内容が大きく変わる場合は、別途ご相談させてください</li>
+</ul>
+<h4>■ 制作について</h4>
+<ul>
+<li>資料のご提供やご返信が遅れると、納期が延びることがあります</li>
+<li>ご提供いただいた資料の権利は、ご依頼者様の責任でご確認ください</li>
+</ul>
+<h4>■ お受けできないもの</h4>
+<ul>
+<li>既存のキャラクターや、他の方の作品をそのまま再現するご依頼</li>
+<li>公序良俗に反する内容</li>
+<li>【その他、お断りしたい内容】</li>
+</ul>
+<h4>■ 著作権・利用範囲</h4>
+<ul><li>商用利用可</li></ul>
+<p>ご不明な点は、購入前にお気軽にメッセージでご相談ください。</p>
+</div>
+</details>
+<a class="btn-card btn-x" href="https://x.com/R_popopo01" target="_blank" rel="noopener">Xで依頼する</a>
+</article>
+<article class="price">
+<div class="p-tag">COSTUME ORDER</div>
+<div class="p-name">VRoid用の衣装を<br>オーダー制作</div>
+<div class="p-price">¥20,000</div>
+<p class="p-desc">VRoid用の衣装の制作。あなただけのオリジナル衣装をご希望通りに制作いたします。</p>
+<ul><li>衣装・テクスチャ制作</li><li>途中経過の確認あり</li></ul>
+<details class="p-detail">
+<summary class="btn-card">詳細を表示<span class="chev" aria-hidden="true">▼</span></summary>
+<div class="p-detail-body">
+<h4>■ 内容(カスタムアイテム（.vroidcustomitem）形式で納品)</h4>
+<p>衣装のみの制作<br>依頼料:20,000円<br>納期:7日程度<br>修正:2〜3回まで(※)</p>
+<p>※ 納品完了後の大幅な修正は、追加料金をいただきます。</p>
+<h4>■ こんな方におすすめ</h4>
+<ul>
+<li>お気に入りのアバターに合う衣装がほしい</li>
+<li>イベントや配信用に、特別な1着がほしい</li>
+<li>設定画やイメージ画像を、衣装として形にしたい</li>
+</ul>
+<h4>■ ご依頼の流れ</h4>
+<ol>
+<li>ご相談(着せる予定のアバター、衣装のイメージ、ご予算、納期をお知らせください)</li>
+<li>お見積り・仕様の確認</li>
+<li>ご購入(正式なご依頼)</li>
+<li>制作(途中経過をご確認いただきます)</li>
+<li>納品・修正対応</li>
+</ol>
+<h4>■ こだわり</h4>
+<ul>
+<li>衣装の細部までの制作を大切にしています。</li>
+<li>ご依頼のイメージを一緒に整理するところから、お手伝いします。</li>
+</ul>
+<h4>■ 参考制作物(VRoid Hub)</h4>
+<p><a href="https://hub.vroid.com/users/127803731" target="_blank" rel="noopener">https://hub.vroid.com/users/127803731</a></p>
+<p>衣装と素体のセット、アバター(素体)のみのご依頼も、別メニューで承っています。<br>お気軽にご相談ください。</p>
+<h4>■ ご購入前にお知らせください</h4>
+<ul>
+<li>イメージがわかる資料(設定画、参考画像、色味・髪型・体型の指定など)</li>
+<li>参考にしたい作品がある場合は、そのURLや画像</li>
+</ul>
+<h4>■ 納品・修正について</h4>
+<ul>
+<li>納品形式はカスタムアイテム（.vroidcustomitem）形式です</li>
+<li>修正は2〜3回まで対応します</li>
+<li>納品完了後の大幅な修正は、追加料金をいただきます</li>
+<li>制作の途中で内容が大きく変わる場合は、別途ご相談させてください</li>
+</ul>
+<h4>■ 制作について</h4>
+<ul>
+<li>資料のご提供やご返信が遅れると、納期が延びることがあります</li>
+<li>ご提供いただいた資料の権利は、ご依頼者様の責任でご確認ください</li>
+</ul>
+<h4>■ お受けできないもの</h4>
+<ul>
+<li>既存のキャラクターや、他の方の作品をそのまま再現するご依頼</li>
+<li>公序良俗に反する内容</li>
+<li>【その他、お断りしたい内容】</li>
+</ul>
+<h4>■ 著作権・利用範囲</h4>
+<ul><li>商用利用可</li></ul>
+<p>ご不明な点は、購入前にお気軽にメッセージでご相談ください。</p>
+<p class="p-src">出典：<a href="https://coconala.com/services/4526306" target="_blank" rel="noopener">ココナラ「VRoid用の衣装をオーダー制作します」</a>のサービス説明文を引用</p>
+</div>
+</details>
+<a class="btn-card btn-x" href="https://x.com/R_popopo01" target="_blank" rel="noopener">Xで依頼する</a>
+</article>
+<article class="price featured">
+<span class="badge">セットでお得</span>
+<div class="p-tag">AVATAR + COSTUME SET</div>
+<div class="p-name">VRoid衣装とアバターを<br>セットで制作</div>
+<div class="p-price">¥40,000</div>
+<p class="p-desc">アバター素体と衣装をセットで制作。姿と衣装の世界観を統一して仕上げる、まるごとおまかせプランです。</p>
+<ul><li>素体＋衣装のセット制作</li><li>世界観を統一して仕上げ</li><li>途中経過の確認あり</li></ul>
+<details class="p-detail">
+<summary class="btn-card">詳細を表示<span class="chev" aria-hidden="true">▼</span></summary>
+<div class="p-detail-body">
+<h4>■ 内容(すべてVRM形式で納品)</h4>
+<p>衣装 + アバター(素体)セット<br>依頼料:40,000円<br>納期:10日程度<br>修正:2〜3回まで※</p>
+<p>※ 納品完了後の大幅な修正は、追加料金をいただきます。</p>
+<h4>■ こんな方におすすめ</h4>
+<ul>
+<li>VTuber・配信用のオリジナルアバターがほしい</li>
+<li>VRChat、clusterなどで使う自分だけのアバターがほしい</li>
+<li>設定画やイメージ画像を、VRMとして形にしたい</li>
+<li>衣装と素体を、世界観を揃えて一緒に作ってほしい</li>
+</ul>
+<h4>■ ご依頼の流れ</h4>
+<ol>
+<li>ご相談(ご希望の内容・ご予算・納期をお知らせください)</li>
+<li>お見積り・仕様の確認</li>
+<li>ご購入(正式なご依頼)</li>
+<li>制作(途中経過をご確認いただきます)</li>
+<li>納品・修正対応</li>
+</ol>
+<h4>■ こだわり</h4>
+<ul>
+<li>衣装の細部までの制作を大切にしています。</li>
+<li>ご依頼のイメージを一緒に整理するところから、お手伝いします。</li>
+</ul>
+<h4>■ 参考制作物(VRoid Hub)</h4>
+<p><a href="https://hub.vroid.com/users/127803731" target="_blank" rel="noopener">https://hub.vroid.com/users/127803731</a></p>
+<p>衣装のみ、アバター(素体)のみのご依頼も、別メニューで承っています。<br>お気軽にご相談ください。</p>
+<h4>■ ご購入前にお知らせください</h4>
+<ul>
+<li>イメージがわかる資料(設定画、参考画像、色味・髪型・体型の指定など)</li>
+<li>参考にしたい作品がある場合は、そのURLや画像</li>
+</ul>
+<h4>■ 納品・修正について</h4>
+<ul>
+<li>納品形式はVRMです</li>
+<li>修正は2〜3回まで対応します</li>
+<li>納品完了後の大幅な修正は、追加料金をいただきます</li>
+<li>制作の途中で内容が大きく変わる場合は、別途ご相談させてください</li>
+</ul>
+<h4>■ 制作について</h4>
+<ul>
+<li>資料のご提供やご返信が遅れると、納期が延びることがあります</li>
+<li>ご提供いただいた資料の権利は、ご依頼者様の責任でご確認ください</li>
+</ul>
+<h4>■ お受けできないもの</h4>
+<ul>
+<li>既存のキャラクターや、他の方の作品をそのまま再現するご依頼</li>
+<li>公序良俗に反する内容</li>
+<li>【その他、お断りしたい内容】</li>
+</ul>
+<h4>■ 著作権・利用範囲</h4>
+<ul><li>商用利用可</li></ul>
+<p>ご不明な点は、購入前にお気軽にメッセージでご相談ください。</p>
+<p class="p-src">出典：<a href="https://coconala.com/services/4526253" target="_blank" rel="noopener">ココナラ「VRoid衣装とアバターをセットで制作します」</a>のサービス説明文を引用</p>
+</div>
+</details>
+<a class="btn-card btn-x" href="https://x.com/R_popopo01" target="_blank" rel="noopener">Xで依頼する</a>
+</article>
+</div>
+<div class="free-note"><b>見積り相談 無料</b><span>「こんな衣装できる？」といった相談だけでも歓迎です。XのDMからお気軽にご連絡ください。</span></div>
+
+<div class="flow-head"><span class="en">FLOW</span><span class="jp">依頼の流れ</span></div>
+<div class="flow">
+<div class="step"><span class="num">01</span><h3>相談</h3><p>XのDMまたはココナラから、作りたいアバター・衣装のイメージをお聞かせください。</p></div>
+<div class="step"><span class="num">02</span><h3>お見積り・仕様確認</h3><p>内容を確認し、お見積りと仕様をすり合わせます。</p></div>
+<div class="step"><span class="num">03</span><h3>制作（途中経過確認）</h3><p>制作を進めながら、途中経過を確認いただきます。イメージとずれないよう丁寧に仕上げます。</p></div>
+<div class="step"><span class="num">04</span><h3>納品・修正対応</h3><p>完成データを納品します。納品後の修正にも対応します。</p></div>
+</div>
+</div>
+</section>
+
+<!-- ============ TOOLS ============ -->
+<section id="tools" class="sec-dark">
+<div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+<div class="sec-head">
+<h2 class="sec-title">Tools <span class="ol">&amp; Game</span></h2>
+<div class="sec-sub"><span class="no">04</span><span class="jp">自作ツール＆ゲーム</span><span class="rule"></span></div>
+</div>
+<div class="tool-grid">
+<article class="tool">
+<a class="t-thumb" href="https://izakayar.github.io/VRM-Easy-Customizer/" target="_blank" rel="noopener"><img src="assets/tool-vrm-customizer.png" alt="VRM Easy Customizer のサムネイル（黄色いロゴ）" width="1200" height="630" loading="lazy"></a>
+<span class="t-no">TOOL — 01</span>
+<h3>VRM Easy Customizer</h3>
+<p class="t-en">BROWSER VRM EDITOR</p>
+<p>ブラウザで動くVRM編集ツール。インストール不要で、アバターのカスタマイズから撮影・書き出しまで。</p>
+<ul>
+<li>.vrm /.vrma /.vmd /.anim 対応</li>
+<li>最大5体まで同時読み込み</li>
+<li>テクスチャペイント、表情、全身ポーズ</li>
+<li>衣装の色調整、撮影、書き出し</li>
+</ul>
+<div class="privacy">読み込んだアバターは端末内でのみ処理され、外部に送信されません。</div>
+<div class="spacer"></div>
+<a class="tool-link" href="https://izakayar.github.io/VRM-Easy-Customizer/" target="_blank" rel="noopener">OPEN IN BROWSER <span>→</span></a>
+</article>
+<article class="tool">
+<a class="t-thumb" href="https://izakayar.github.io/clus-world-stock/" target="_blank" rel="noopener"><img src="assets/tool-clus-world.jpg" alt="Clus World Stock のサムネイル（ワイヤーフレームの地球とロゴ）" width="1200" height="634" loading="lazy"></a>
+<span class="t-no">TOOL — 02</span>
+<h3>Clus World Stock</h3>
+<p class="t-en">CLUSTER BOOKMARK ・ β</p>
+<p>clusterのワールド／イベントをブックマークして整理できるツール（β版）。お気に入りの場所をストックしておけます。</p>
+<ul>
+<li>ワールド／イベントを検索</li>
+<li>フォルダ作成・URL共有</li>
+<li>メモ機能</li>
+<li>バックアップ対応</li>
+</ul>
+<div class="privacy">読み込んだアバターは端末内でのみ処理され、外部に送信されません。</div>
+<div class="spacer"></div>
+<a class="tool-link" href="https://izakayar.github.io/clus-world-stock/" target="_blank" rel="noopener">OPEN IN BROWSER <span>→</span></a>
+</article>
+<article class="tool">
+<a class="t-thumb" href="https://izakayar.github.io/chuka-hanten-r/" target="_blank" rel="noopener"><img src="assets/tool-chuka.webp" alt="中華飯店R のタイトル画像（ちびキャラとロゴ）" width="1000" height="525" loading="lazy"></a>
+<span class="t-no">GAME — 03</span>
+<h3>中華飯店R</h3>
+<p class="t-en">FREE BROWSER GAME</p>
+<p>食材をなぞって切って、料理人の鍋へ届ける無料ブラウザゲーム。居酒屋の次は中華飯店へどうぞ。</p>
+<ul>
+<li>なぞって切る、シンプル操作</li>
+<li>ランキングあり</li>
+<li>無料・ブラウザですぐ遊べる</li>
+</ul>
+<div class="spacer"></div>
+<a class="tool-link" href="https://izakayar.github.io/chuka-hanten-r/" target="_blank" rel="noopener">PLAY FREE <span>→</span></a>
+</article>
+</div>
+</div>
+</section>
+
+<!-- ============ LINKS ============ -->
+<section id="links" class="sec-pale">
+<div class="guides" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+<div class="sec-head">
+<h2 class="sec-title">Li<span class="ol">nks</span></h2>
+<div class="sec-sub"><span class="no">05</span><span class="jp">リンク</span><span class="rule"></span></div>
+</div>
+<div class="link-list">
+<a class="link-row" href="https://x.com/R_popopo01" target="_blank" rel="noopener"><span class="l-icon l-icon--x" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.77 7.74L24.2 22h-6.24l-4.89-6.4L7.47 22H4.34l7.24-8.28L3.2 2h6.4l4.42 5.85L18.9 2zm-1.1 18.1h1.73L8.7 3.8H6.85L17.8 20.1z"/></svg></span><span class="l-en">X</span><span class="l-desc">@R_popopo01 — VRChat・VRoid関連のメインアカウント。依頼はDMより受付中。</span><span class="l-arrow">↗</span></a>
+<a class="link-row" href="https://coconala.com/users/6417532" target="_blank" rel="noopener"><span class="l-icon l-icon--coconala" aria-hidden="true"><span class="l-letter">c</span></span><span class="l-en">COCONALA</span><span class="l-desc">アバター／衣装制作の依頼販売。見積り相談は無料。</span><span class="l-arrow">↗</span></a>
+<a class="link-row" href="https://izakaya-r.booth.pm/" target="_blank" rel="noopener"><span class="l-icon l-icon--booth" aria-hidden="true"><span class="l-letter">B</span></span><span class="l-en">BOOTH</span><span class="l-desc">チャイナドレス衣装やハロウィン衣装、VRM Easy Customizer用プラグインなどを販売中。</span><span class="l-arrow">↗</span></a>
+<a class="link-row" href="https://hub.vroid.com/users/127803731" target="_blank" rel="noopener"><span class="l-icon l-icon--vroid" aria-hidden="true"><span class="l-letter">V</span></span><span class="l-en">VROID HUB</span><span class="l-desc">制作したアバター・衣装を公開中（ユーザー名：R）。</span><span class="l-arrow">↗</span></a>
+<a class="link-row" href="https://cluster.mu/u/kqhBrhJDwNR6dM3z" target="_blank" rel="noopener"><span class="l-icon l-icon--cluster" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="7" cy="7" r="3.4"/><circle cx="17" cy="7" r="3.4" opacity=".55"/><circle cx="7" cy="17" r="3.4" opacity=".55"/><circle cx="17" cy="17" r="3.4"/></svg></span><span class="l-en">CLUSTER</span><span class="l-desc">ワールド4件公開、アバター・アイテム販売中。323フォロワー。</span><span class="l-arrow">↗</span></a>
+<a class="link-row" href="https://www.pixiv.net/users/127803731" target="_blank" rel="noopener"><span class="l-icon l-icon--pixiv" aria-hidden="true"><span class="l-letter">P</span></span><span class="l-en">PIXIV</span><span class="l-desc">VRoidの画像を投稿中。</span><span class="l-arrow">↗</span></a>
+<a class="link-row" href="https://www.youtube.com/@居酒屋R" target="_blank" rel="noopener"><span class="l-icon l-icon--youtube" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span><span class="l-en">YOUTUBE</span><span class="l-desc">@居酒屋R — MMDやVRChatの動画を公開。過去動画21本。</span><span class="l-arrow">↗</span></a>
+<a class="link-row" href="https://www.twitch.tv/masa_ra9" target="_blank" rel="noopener"><span class="l-icon l-icon--twitch" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M11.57 4.71h1.72v5.15h-1.72zm4.72 0H18v5.15h-1.71zM6 0L1.71 4.29v15.42h5.15V24l4.28-4.29h3.43L22.29 12V0zm14.57 11.14l-3.43 3.43h-3.43l-3 3v-3H6.86V1.71h13.71z"/></svg></span><span class="l-en">TWITCH</span><span class="l-desc">居酒屋アール — たまにゲーム配信。「酒とゲームとアートが好き」。</span><span class="l-arrow">↗</span></a>
+</div>
+
+<div class="cta">
+<span class="cta-bg" aria-hidden="true">R</span>
+<h2>あなたの「なりたい姿」、<br>仕立てます。</h2>
+<p>アバター制作、衣装のオーダー、テクスチャの相談——まずは無料の見積り相談から。XのDM、またはココナラでお待ちしています。</p>
+<div class="btns">
+<a class="btn btn-gold" href="https://x.com/R_popopo01" target="_blank" rel="noopener">XのDMで相談する</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot-big" aria-hidden="true">IZAKAYA <em>R</em></div>
+<div class="foot-grid">
+<nav aria-label="フッターナビゲーション">
+<a href="#profile">PROFILE</a>
+<a href="#works">WORKS</a>
+<a href="#commission">COMMISSION</a>
+<a href="#tools">TOOLS</a>
+<a href="#links">LINKS</a>
+</nav>
+<nav aria-label="SNSリンク">
+<a href="https://x.com/R_popopo01" target="_blank" rel="noopener">X</a>
+<a href="https://www.youtube.com/@居酒屋R" target="_blank" rel="noopener">YOUTUBE</a>
+<a href="https://www.twitch.tv/masa_ra9" target="_blank" rel="noopener">TWITCH</a>
+<a href="https://lit.link/izakaya_r" target="_blank" rel="noopener">LIT.LINK</a>
+</nav>
+</div>
+<div class="foot-note">
+<span>© 居酒屋R</span>
+</div>
+</div>
+</footer>
+
+<script>
+(function(){
+// Marquee content
+var words=['VRM AVATAR','COSTUME DESIGN','TEXTURE','VROID STUDIO','VRCHAT','CLUSTER','VTUBER','COMMISSION OPEN'];
+var html='';
+for(var r=0;r<2;r++){ words.forEach(function(w){ html+='<span>'+w+'</span><b>◆</b>'; }); }
+var half=html;
+document.getElementById('mq1').innerHTML=half+half;
+document.getElementById('mq2').innerHTML=half+half;
+// Header state
+var header=document.getElementById('siteHeader');
+function onScroll(){ header.classList.toggle('scrolled', window.scrollY>40); }
+window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+// Commission details: whichever button is pressed, all three details open/close together
+var pDetails=document.querySelectorAll('.p-detail');
+pDetails.forEach(function(d){
+  var summary=d.querySelector('summary');
+  if(!summary) return;
+  summary.addEventListener('click', function(e){
+    e.preventDefault();
+    var shouldOpen=!d.open;
+    pDetails.forEach(function(o){ o.open=shouldOpen; });
+  });
+});
+// Overlay nav
+var overlay=document.getElementById('overlayNav');
+document.getElementById('menuOpen').addEventListener('click', function(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; });
+function closeOv(){ overlay.classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('menuClose').addEventListener('click', closeOv);
+overlay.querySelectorAll('nav a').forEach(function(a){ a.addEventListener('click', closeOv); });
+})();
+</script>
+
+<script>
+(function(){
+var EN = {"居酒屋R — 3Dクリエイター | VRoid・VRChatアバター制作": "Izakaya R — 3D Creator | VRoid & VRChat Avatar Commissions", "居酒屋R": "Izakaya R", "Xで依頼する": "Order via X", "プロフィール": "Profile", "作品": "Works", "依頼メニュー": "Commission", "ツール＆ゲーム": "Tools & Games", "リンク": "Links", "あなただけの姿を、仕立てる。": "Tailoring a look that's uniquely yours.", "COMMISSION OPEN — 依頼受付中": "COMMISSION OPEN — Now Accepting Orders", "居酒屋": "IZAKAYA", "作品を見る": "View Works", "いらっしゃいませ。居酒屋Rです": "Welcome — I'm Izakaya R", "青いお団子髪とチャイナドレスが目印の": "With blue bun hair and a China dress as my signature, I'm a ", "3Dクリエイター": "3D creator", "です。": ".", "VRoid Studioを使って、VRMアバター・衣装・テクスチャを制作しています。clusterなどで使えるアバターはもちろん、ワールド、クラフトアイテム、アクセサリーまで幅広く手がけています。": "I create VRM avatars, costumes and textures in VRoid Studio — not only avatars for cluster and more, but also worlds, craft items and accessories.", "得意な衣装はファンタジー系・SF衣装。チャイナドレスをはじめ、衣装単体のオーダーや、既存アバターへの衣装調整・改変、テクスチャの制作・差し替えにも対応します。": "My specialties are fantasy and sci-fi costumes. From China dresses to standalone costume orders, fitting and altering costumes for existing avatars, and creating or replacing textures — just ask.", "制作だけでなく、ブラウザで動くVRM編集ツールやゲームも自作・公開しています。配信はTwitchでたまにゲーム配信してます。": "Beyond commissions, I also build and publish my own browser-based VRM editing tools and games, and I stream games on Twitch from time to time.", "VRoid StudioでのVRMアバター制作": "VRM avatar creation in VRoid Studio", "衣装・テクスチャ制作（和装／制服／ファンタジー／SF）": "Costume & texture creation (Japanese / uniforms / fantasy / sci-fi)", "VRoidアバターの衣装調整・改変": "Costume fitting & alterations for VRoid avatars", "cluster向けワールド・クラフトアイテム・アクセサリー制作": "Worlds, craft items & accessories for cluster", "VTuberとして活動したい方": "For aspiring VTubers", "VRChat・clusterで自分らしい姿がほしい方": "For anyone who wants a look that's truly theirs in VRChat / cluster", "既存アバターに新しい衣装を着せたい方": "For anyone who wants a new costume for an existing avatar", "チャイナドレス": "China Dress", "白／濃紺／水色。代表作 チャイナドレスシリーズのカラー展開です。": "White / navy / light blue — color variations of my signature China Dress series.", "販売中の商品": "Items on Sale", "BOOTH ・ VRoid衣装": "BOOTH · VRoid Costume", "【VRoid衣装】チャイナドレスセット01【全10色+タイツ2種+ブーツ2種】": "[VRoid Costume] China Dress Set 01 [10 colors + 2 tights + 2 boots]", "VRoid Studioに読み込んで対応アバターに着せるチャイナドレス（チャイパオ）のセットです。ドレスは全10色（ネイビー、ブルー、オレンジ、ピンク、レッド、グリーン、グレー、ライトブルー、パープル、ブラック）。ガーターベルト付きタイツ、下半身インナー、ピンヒール、厚底ブーツを自由に組み合わせてカスタマイズできます。テクスチャはレイヤーの表示／非表示でも組み合わせ可能です。改変・加工や商用利用、cluster・VRChatなどでの使用もOKです。": "A China dress (qipao) set to load in VRoid Studio and dress up a compatible avatar. The dress comes in 10 colors (navy, blue, orange, pink, red, green, gray, light blue, purple, black). Mix and match garter-belt tights, lower-body innerwear, stiletto heels and platform boots, and combine textures by toggling layers. Alterations, commercial use, and use in cluster / VRChat are all OK.", "BOOTHで商品を見る ↗": "View on BOOTH ↗", "ハロウィンワンピース セット01": "Halloween Dress Set 01", "VRoid Studioに読み込んで対応アバターに着せる、3色のハロウィン衣装セットです。ハロウィンワンピース3色（オレンジ、パープル、グリーン）に、魔女帽子2色（オレンジ、パープル）、レッグウェア、ハロウィンブーツ2色（シルバー、ゴールド）が入っています。テクスチャはレイヤーの表示／非表示で組み合わせ可能です。改変・加工や商用利用、cluster・VRChatなどでの使用もOKです。": "A 3-color Halloween costume set to load in VRoid Studio and dress up a compatible avatar. Includes the Halloween dress in 3 colors (orange, purple, green), witch hats in 2 colors (orange, purple), legwear, and Halloween boots in 2 colors (silver, gold). Combine textures by toggling layers. Alterations, commercial use, and use in cluster / VRChat are all OK.", "BOOTH ・ プラグイン（無料）": "BOOTH · Plugin (Free)", "【VRM Easy Customizer用プラグイン】魔法陣＆時間魔法エフェクト（無料）": "[Plugin for VRM Easy Customizer] Magic Circle & Time Magic Effects (Free)", "無料ダウンロード": "Free download", "自作ツール「VRM Easy Customizer」で使えるプラグインです。アバターの足元や背後に発光する魔法陣を表示して撮影できます。星・月・太陽・ルーン文字の「魔法陣エフェクト」と、時計・文字盤モチーフの「時間魔法エフェクト」の2つがセットになっています。魔法陣は最大10個まで同時表示でき、色・大きさ・発光の強さ・回転速度などを調整可能です。撮影（画像・動画）時のみ使えるエフェクトで、アバターデータは含まれません。作った画像・動画のSNS投稿や配信への使用は、個人・商用を問わずOKです。": "A plugin for my tool “VRM Easy Customizer.” Display glowing magic circles at your avatar's feet or behind them for photos and videos. The set includes a “Magic Circle Effect” (stars, moons, suns and runes) and a “Time Magic Effect” (clocks and dials). Show up to 10 circles at once and adjust color, size, glow and rotation speed. These effects are for shooting (images / video) only; no avatar data is included. Feel free to post or stream what you make, for personal or commercial use.", "BOOTHで商品を見る": "View Items on BOOTH", "XのDMにて受付中": "Orders via X DM", "VRoidアバター": "VRoid Avatar", "（素体のみ）制作": " (Base Body Only)", "VRoid Studioで、あなたのためのVRMアバター素体のみを制作。VTuber・VRChat・clusterでの活動の第一歩に。": "A VRM avatar base body made just for you in VRoid Studio — your first step as a VTuber, or in VRChat / cluster.", "VRMアバター制作": "VRM avatar creation", "途中経過の確認あり": "Progress check-ins included", "詳細を表示": "Show Details", "■ 内容(VRM形式、.vroid形式で納品)": "■ What's included (delivered in VRM & .vroid formats)", "アバター(素体)のみの制作": "Avatar (base body) only", "依頼料:30,000円": "Price: ¥30,000", "納期:5日程度": "Turnaround: approx. 5 days", "修正:2〜3回まで(※)": "Revisions: up to 2–3 rounds (*)", "※ 納品完了後の大幅な修正は、追加料金をいただきます。": "* Major changes after final delivery are charged separately.", "■ こんな方におすすめ": "■ Recommended for", "VTuber・配信用のオリジナルアバターがほしい": "Anyone who wants an original avatar for VTubing / streaming", "設定画やイメージ画像を、VRMとして形にしたい": "Anyone who wants to turn reference art or an image into a VRM avatar", "衣装は自分で用意するので、素体だけ作ってほしい": "Anyone who has their own costume and just needs the base body", "■ ご依頼の流れ": "■ How ordering works", "ご相談(ご希望のイメージ、ご予算、納期をお知らせください)": "Consultation (tell me your idea, budget and deadline)", "お見積り・仕様の確認": "Quote & spec confirmation", "ご購入(正式なご依頼)": "Purchase (formal order)", "制作(途中経過をご確認いただきます)": "Production (with progress check-ins)", "納品・修正対応": "Delivery & Revisions", "■ こだわり": "■ My approach", "ご依頼のイメージを一緒に整理するところから、お手伝いします。": "I'll help you organize your ideas from the very start.", "■ 参考制作物(VRoid Hub)": "■ Portfolio (VRoid Hub)", "衣装の制作、衣装と素体のセットのご依頼も、別メニューで承っています。": "Costume-only and costume + base body set orders are available in the other plans.", "お気軽にご相談ください。": "Feel free to get in touch.", "■ ご購入前にお知らせください": "■ Please share before ordering", "イメージがわかる資料(設定画、参考画像、色味・髪型・体型の指定など)": "Reference materials (character sheets, reference images, colors / hairstyle / body type, etc.)", "参考にしたい作品がある場合は、そのURLや画像": "URLs or images of any work you'd like to reference", "■ 納品・修正について": "■ Delivery & revisions", "納品形式はVRM形式、.vroid形式の両方です": "Delivered in both VRM and .vroid formats", "修正は2〜3回まで対応します": "Up to 2–3 rounds of revisions included", "納品完了後の大幅な修正は、追加料金をいただきます": "Major changes after final delivery are charged separately", "制作の途中で内容が大きく変わる場合は、別途ご相談させてください": "If the scope changes significantly mid-production, we'll discuss it first", "■ 制作について": "■ About production", "資料のご提供やご返信が遅れると、納期が延びることがあります": "Delays in materials or replies may extend the turnaround", "ご提供いただいた資料の権利は、ご依頼者様の責任でご確認ください": "Please make sure you have the rights to any materials you provide", "■ お受けできないもの": "■ I cannot accept", "既存のキャラクターや、他の方の作品をそのまま再現するご依頼": "Requests to directly recreate existing characters or someone else's work", "公序良俗に反する内容": "Content that offends public order and morals", "【その他、お断りしたい内容】": "[Other content I may decline]", "■ 著作権・利用範囲": "■ Copyright & usage", "商用利用可": "Commercial use OK", "ご不明な点は、購入前にお気軽にメッセージでご相談ください。": "If anything is unclear, feel free to message me before ordering.", "VRoid用の衣装を": "Custom Costume for VRoid", "オーダー制作": "Made to Order", "VRoid用の衣装の制作。あなただけのオリジナル衣装をご希望通りに制作いたします。": "A costume made for VRoid — your one-of-a-kind original outfit, made exactly as you envision it.", "衣装・テクスチャ制作": "Costume & texture creation", "■ 内容(カスタムアイテム（.vroidcustomitem）形式で納品)": "■ What's included (delivered as a custom item: .vroidcustomitem)", "衣装のみの制作": "Costume only", "依頼料:20,000円": "Price: ¥20,000", "納期:7日程度": "Turnaround: approx. 7 days", "お気に入りのアバターに合う衣装がほしい": "Anyone who wants a costume that fits their favorite avatar", "イベントや配信用に、特別な1着がほしい": "Anyone who wants a special outfit for an event or stream", "設定画やイメージ画像を、衣装として形にしたい": "Anyone who wants to turn reference art or an image into a costume", "ご相談(着せる予定のアバター、衣装のイメージ、ご予算、納期をお知らせください)": "Consultation (tell me the avatar, costume idea, budget and deadline)", "衣装の細部までの制作を大切にしています。": "I take care with every detail of each costume.", "衣装と素体のセット、アバター(素体)のみのご依頼も、別メニューで承っています。": "Costume + base body sets and base-body-only orders are available in the other plans.", "納品形式はカスタムアイテム（.vroidcustomitem）形式です": "Delivered as a custom item (.vroidcustomitem)", "出典：": "Source: ", "ココナラ「VRoid用の衣装をオーダー制作します」": "Coconala “Custom VRoid Costume Orders”", "のサービス説明文を引用": " service description (quoted)", "セットでお得": "Best Value Set", "VRoid衣装とアバターを": "VRoid Costume & Avatar", "セットで制作": "Made as a Set", "アバター素体と衣装をセットで制作。姿と衣装の世界観を統一して仕上げる、まるごとおまかせプランです。": "Base body and costume made as a set — one unified world for your look and outfit, all in one hands-off plan.", "素体＋衣装のセット制作": "Base body + costume set", "世界観を統一して仕上げ": "Finished with a unified world / style", "■ 内容(すべてVRM形式で納品)": "■ What's included (all delivered in VRM format)", "衣装 + アバター(素体)セット": "Costume + avatar (base body) set", "依頼料:40,000円": "Price: ¥40,000", "納期:10日程度": "Turnaround: approx. 10 days", "修正:2〜3回まで※": "Revisions: up to 2–3 rounds *", "VRChat、clusterなどで使う自分だけのアバターがほしい": "Anyone who wants an avatar of their own for VRChat, cluster and more", "衣装と素体を、世界観を揃えて一緒に作ってほしい": "Anyone who wants costume and base body made together with a unified style", "ご相談(ご希望の内容・ご予算・納期をお知らせください)": "Consultation (tell me what you'd like, your budget and deadline)", "衣装のみ、アバター(素体)のみのご依頼も、別メニューで承っています。": "Costume-only and base-body-only orders are available in the other plans.", "納品形式はVRMです": "Delivered in VRM format", "ココナラ「VRoid衣装とアバターをセットで制作します」": "Coconala “VRoid Costume & Avatar Sets”", "見積り相談 無料": "Free Quotes & Consultations", "「こんな衣装できる？」といった相談だけでも歓迎です。XのDMからお気軽にご連絡ください。": "Questions like “Can you make a costume like this?” are welcome too — feel free to DM me on X.", "依頼の流れ": "How It Works", "相談": "Consultation", "XのDMまたはココナラから、作りたいアバター・衣装のイメージをお聞かせください。": "Tell me about the avatar or costume you'd like via X DM or Coconala.", "お見積り・仕様確認": "Quote & Spec Check", "内容を確認し、お見積りと仕様をすり合わせます。": "We'll review your request and align on the quote and specs.", "制作（途中経過確認）": "Production (Progress Check-ins)", "制作を進めながら、途中経過を確認いただきます。イメージとずれないよう丁寧に仕上げます。": "I'll share progress as I work, carefully finishing everything so it matches your vision.", "完成データを納品します。納品後の修正にも対応します。": "I'll deliver the finished files and handle revisions after delivery.", "自作ツール＆ゲーム": "My Tools & Games", "ブラウザで動くVRM編集ツール。インストール不要で、アバターのカスタマイズから撮影・書き出しまで。": "A VRM editor that runs in your browser — no install needed, from avatar customization to shooting and export.", ".vrm /.vrma /.vmd /.anim 対応": "Supports .vrm / .vrma / .vmd / .anim", "最大5体まで同時読み込み": "Load up to 5 avatars at once", "テクスチャペイント、表情、全身ポーズ": "Texture painting, expressions & full-body poses", "衣装の色調整、撮影、書き出し": "Costume color tweaks, shooting & export", "読み込んだアバターは端末内でのみ処理され、外部に送信されません。": "Loaded avatars are processed only on your device and are never sent anywhere.", "CLUSTER BOOKMARK ・ β": "CLUSTER BOOKMARK · β", "clusterのワールド／イベントをブックマークして整理できるツール（β版）。お気に入りの場所をストックしておけます。": "A tool (beta) to bookmark and organize cluster worlds and events — keep all your favorite places in one stock.", "ワールド／イベントを検索": "Search worlds / events", "フォルダ作成・URL共有": "Folders & URL sharing", "メモ機能": "Notes", "バックアップ対応": "Backup support", "中華飯店R": "Chuka Hanten R", "食材をなぞって切って、料理人の鍋へ届ける無料ブラウザゲーム。居酒屋の次は中華飯店へどうぞ。": "A free browser game: trace to chop ingredients and deliver them to the chef's wok. After the izakaya, try the Chinese restaurant.", "なぞって切る、シンプル操作": "Simple trace-to-chop controls", "ランキングあり": "Leaderboards", "無料・ブラウザですぐ遊べる": "Free — play instantly in your browser", "@R_popopo01 — VRChat・VRoid関連のメインアカウント。依頼はDMより受付中。": "@R_popopo01 — Main account for VRChat / VRoid. Orders via DM.", "アバター／衣装制作の依頼販売。見積り相談は無料。": "Avatar & costume commissions. Quotes and consultations are free.", "チャイナドレス衣装やハロウィン衣装、VRM Easy Customizer用プラグインなどを販売中。": "China dress and Halloween costumes, plugins for VRM Easy Customizer, and more.", "制作したアバター・衣装を公開中（ユーザー名：R）。": "Avatars and costumes I've made (username: R).", "ワールド4件公開、アバター・アイテム販売中。323フォロワー。": "4 worlds published, avatars & items on sale. 323 followers.", "VRoidの画像を投稿中。": "Posting VRoid artwork.", "@居酒屋R — MMDやVRChatの動画を公開。過去動画21本。": "@Izakaya R — MMD and VRChat videos. 21 past videos.", "居酒屋アール — たまにゲーム配信。「酒とゲームとアートが好き」。": "Izakaya R — Occasional game streams. “I love drinks, games and art.”", "あなたの「なりたい姿」、": "Your “dream look,” ", "仕立てます。": "tailored just for you.", "アバター制作、衣装のオーダー、テクスチャの相談——まずは無料の見積り相談から。XのDM、またはココナラでお待ちしています。": "Avatar commissions, costume orders, texture questions — start with a free quote. Reach me by X DM or on Coconala.", "XのDMで相談する": "Chat via X DM", "ココナラで依頼する": "Order on Coconala", "© 居酒屋R": "© Izakaya R", "青い三つ編みと「居酒屋R」の札が付いた帽子、黒の中華風トップスとプリーツスカートのアバター全身": "Full-body avatar with a blue braid, a hat with an “Izakaya R” tag, a black Chinese-style top and a pleated skirt", "濃紺のチャイナドレスを着て膝立ちし、顔の横に手を添えたポーズ": "Kneeling in a navy China dress with one hand by her face", "チャイナドレス衣装の3色バリエーション（白・濃紺・水色）を着た3体のアバター": "Three avatars wearing the China dress in three colors (white, navy, light blue)", "チャイナドレスセット01を着た3体のアバター（白・濃紺・水色）": "Three avatars wearing China Dress Set 01 (white, navy, light blue)", "ハロウィンワンピース セット01を着た3体のアバター（オレンジ・パープル・グリーン）": "Three avatars wearing Halloween Dress Set 01 (orange, purple, green)", "金の時計魔法陣を背に立つアバター（魔法陣＆時間魔法エフェクトの使用イメージ）": "Avatar standing before a golden clock magic circle (Magic Circle & Time Magic Effects in use)", "VRM Easy Customizer のサムネイル（黄色いロゴ）": "VRM Easy Customizer thumbnail (yellow logo)", "Clus World Stock のサムネイル（ワイヤーフレームの地球とロゴ）": "Clus World Stock thumbnail (wireframe globe and logo)", "中華飯店R のタイトル画像（ちびキャラとロゴ）": "Chuka Hanten R title image (chibi character and logo)", "居酒屋R トップへ": "Back to top — Izakaya R", "メインナビゲーション": "Main navigation", "サイトメニュー": "Site menu", "フッターナビゲーション": "Footer navigation", "SNSリンク": "Social links", "言語切り替え / Language": "Language / 言語切り替え"};
+var textNodes=[], attrNodes=[];
+function collect(){
+  var walker=document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {acceptNode:function(n){
+    if(!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+    var p=n.parentNode; if(!p) return NodeFilter.FILTER_REJECT;
+    var t=p.tagName; if(t==='SCRIPT'||t==='STYLE') return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  var n; while(n=walker.nextNode()){ textNodes.push({node:n, ja:n.nodeValue}); }
+  document.querySelectorAll('[alt],[aria-label]').forEach(function(el){
+    ['alt','aria-label'].forEach(function(attr){
+      if(el.hasAttribute(attr)) attrNodes.push({el:el, attr:attr, ja:el.getAttribute(attr)});
+    });
+  });
+}
+function tr(ja){
+  var key=ja.trim();
+  if(EN.hasOwnProperty(key)){
+    var lead=ja.match(/^\s*/)[0], trail=ja.match(/\s*$/)[0];
+    return lead+EN[key]+trail;
+  }
+  return null;
+}
+var jaTitle=document.title;
+function setLang(lang){
+  var en = (lang==='en');
+  textNodes.forEach(function(r){ if(en){ var v=tr(r.ja); r.node.nodeValue = (v!==null? v : r.ja); } else { r.node.nodeValue=r.ja; } });
+  attrNodes.forEach(function(r){ if(en){ var v=tr(r.ja); r.el.setAttribute(r.attr, v!==null? v.trim() : r.ja); } else { r.el.setAttribute(r.attr, r.ja); } });
+  document.title = en ? (EN[jaTitle]||jaTitle) : jaTitle;
+  document.documentElement.lang = en ? 'en' : 'ja';
+  document.getElementById('langJa').setAttribute('aria-pressed', en?'false':'true');
+  document.getElementById('langEn').setAttribute('aria-pressed', en?'true':'false');
+}
+collect();
+document.getElementById('langJa').addEventListener('click', function(){ setLang('ja'); });
+document.getElementById('langEn').addEventListener('click', function(){ setLang('en'); });
+})();
+</script>
+</body>
+</html>
