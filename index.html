@@ -54,10 +54,8 @@ button{min-height:44px}
 @media(max-width:560px){.wrap{width:calc(100% - 32px)}}
 ::selection{background:var(--blue);color:#fff}
 
-/* vertical guide lines (editorial grid) */
-.guides{position:absolute;inset:0;pointer-events:none;display:flex;justify-content:space-between}
-.guides i{width:1px;background:var(--line-w);opacity:.5}
-.on-pale .guides i{background:var(--line-d)}
+/* vertical guide lines removed */
+.guides{display:none}
 
 /* ---------- header ---------- */
 header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
@@ -126,7 +124,7 @@ h1 .r{font-family:var(--min);font-weight:800;color:var(--gold-2);font-size:.92em
 @media(max-width:900px){
   .hero-chara{height:min(76svh,172vw);right:1vw}
   .hero-side-r{display:none}
-  .hero-in{padding:120px 0 44px;background:linear-gradient(90deg,rgba(7,15,34,.9) 0%,rgba(7,15,34,.72) 52%,rgba(7,15,34,.12) 88%),linear-gradient(0deg,rgba(7,15,34,.78),rgba(7,15,34,0) 52%)}
+  .hero-in{padding:120px 0 44px}
   .hero-back{font-size:20.5vw;letter-spacing:.06em;top:84px}
   .hero-lead{max-width:21em;text-shadow:0 2px 16px rgba(3,7,18,.85)}
   .hero-meta{text-shadow:0 2px 10px rgba(3,7,18,.85)}
